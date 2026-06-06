@@ -1,16 +1,100 @@
-# React + Vite
+# 🎨 河北省公益广告大赛平台 - 高保真 React 前端项目
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-19.0-blue.svg?style=flat-square&logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38B2AC.svg?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF.svg?style=flat-square&logo=vite)](https://vite.dev/)
+[![Playwright](https://img.shields.io/badge/Playwright-E2E_Test-2E8B57.svg?style=flat-square&logo=playwright)](https://playwright.dev/)
 
-Currently, two official plugins are available:
+本项目基于 Stitch “河北省公益广告大赛平台”设计稿进行 100% 视觉还原。基于 **Vite + React + Tailwind CSS (v4)** 现代架构构建，以“纸雕纹理”、“正气红（Justice Red）”和“信赖蓝（Trust Blue）”为核心设计系统，深度模拟并打通了平台的所有前端交互。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 核心页面与交互亮点
 
-## React Compiler
+项目完全重构并丰富了前端交互逻辑，包括以下核心页面：
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 🏠 首页 (`Home.jsx`)
+* **传统美学视觉**：精准还原传统纸雕（Paper-cutting）纹理背景和大气合理的双色排版。
+* **无缝拖拽走马灯**：历届精品展厅卡片支持**桌面端鼠标手工拖拽平滑滚动**以及**移动端原生惯性滑动**，告别死板的自动轮播。
+* **滚动显现动效**：使用 `IntersectionObserver` 实现了页面滚动时元素向上浮现、淡入的缓动微特效。
 
-## Expanding the ESLint configuration
+### 2. 🧭 大赛指南 (`Guide.jsx`)
+* **Scrollspy 滚动侧边联动**：右侧指南内容滚动时，左侧导航条对应项会自动高亮；点击导航项可平滑过渡滚动定位到指定章节。
+* **响应式时间线**：大赛各阶段的时间中轴线在平板和手机端自动切换为更优的单侧流动排版。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. 📰 新闻动态 (`News.jsx`)
+* **实时分类过滤**：提供“全部”、“重要通知”、“大赛新闻”等标签分类，支持前端快速无感筛选。
+* **正文阅读弹窗**：点击任一新闻卡片会调起精美的阅读详情模态窗，提供流畅的沉浸式阅读体验。
+
+### 4. 🎬 精品展厅 (`Gallery.jsx`)
+* **联合多维筛选**：支持按“年份”、“作品类别”、“获奖等级”以及输入关键字进行组合式动态检索。
+* **Lightbox 媒体预览灯箱**：平面设计海报支持大图灯箱预览；视频作品可一键唤起**内联视频播放器**，直接进行媒体流播放调试。
+
+### 5. ✍️ 作品征集与上传 (`Upload.jsx`)
+* **分步 Stepper 填报**：清晰分为三步（主体信息填报 ➡️ 作品详细申报 ➡️ 附件上传确认）。
+* **前端表单强校验**：严格对手机号格式（11位）、邮箱（正则规范）及必填项进行拦截，不合格时触发输入框抖动和红色报错闪烁。
+* **文件拖拽上传模拟**：支持原生文件拖拽，拖入文件时虚线框高亮并解析展示待上传文件名；点击提交后模拟上传进度条加载动画，成功后生成随机作品申报号与专属徽标。
+
+---
+
+## 🛠️ 技术栈与架构
+
+* **前端核心**：`React 19` + `Vite 8`
+* **路由控制**：`React Router Dom v7` (采用 HashRouter 确保本地静态预览及托管路由正常工作)
+* **样式系统**：`Tailwind CSS v4`
+  > [!TIP]
+  > 项目采用 Tailwind v4 规范。摒弃了传统的 `tailwind.config.js` 配置文件，所有主题的自定义色彩（如 `#C8102E` 等）、间距及字体设置均在 `src/index.css` 的 `@theme { ... }` 块中通过 CSS 原生变量配置声明，编译效率极高。
+* **全局上下文**：`AppContext.jsx`（统一管理模拟登录状态、个人账户信息以及弹窗浮层显隐）。
+
+---
+
+## 📦 快速开始
+
+### 1. 安装依赖
+在项目根目录下执行：
+```bash
+npm install
+```
+
+### 2. 本地开发调试
+启动本地 Vite 开发服务器（默认监听 `http://localhost:5173/`）：
+```bash
+npm run dev
+```
+
+### 3. 生产环境打包
+将项目编译并压缩打包为生产环境静态文件，产物会输出至 `dist/` 目录下：
+```bash
+npm run build
+```
+
+### 4. 本地预览打包产物
+```bash
+npm run preview
+```
+
+---
+
+## 🧪 Playwright 自动化测试 (E2E)
+
+项目内置了完整的 **Playwright 端到端自动化测试脚本**，用以全面验证网站的核心交互流程。
+
+### 测试用例覆盖：
+1. 首页导航栏及标题显示检查，截取首页截图。
+2. 页面跳转指南页，向下滚动触发 Scrollspy 左侧高亮联动，截图。
+3. 新闻分类过滤筛选、点击卡片弹出正文模态框及关闭，截图。
+4. 筛选“视频广告”、点击调起视频 Lightbox 内联播放器预览，截图。
+5. 拦截未登录状态下访问作品征集页面，截图锁屏提醒。
+6. 模拟登录（输入用户名“燕赵创意家”、密码“123456”），确认顶部导航更新为用户态头像，截图。
+7. 重新进入征集页面，测试空白表单的第一步空字段校验拦截，截图。
+8. 自动录入参赛人及作品元数据，跳转至第三步上传待提报作品文件。
+9. 模拟文件拖拽上传、勾选原创声明承诺书，截图。
+10. 点击提交，监视并截图进度条上传加载状态。
+11. 校验成功，截图“作品报送成功！”模态窗及随机生成的报送流水号回执。
+12. 关闭回执，跳转回网站首页。
+
+### 运行自动化测试：
+在运行测试前，请确保本地开发服务器已运行（`npm run dev`），然后执行：
+```bash
+node playwright-test.js
+```
+> [!NOTE]
+> 测试脚本配置为 `headless: true`（无头模式）且指定了 `channel: 'chrome'`（调用本地 Chrome 浏览器），能完美避免本地代理网络软件（如 Cl*sh/V2r*y）拦截 127.0.0.1 产生的 CDP 端口连接解析错误。所有的测试步骤截图将自动输出保存在本地 **`test-screenshots/`** 目录中。
