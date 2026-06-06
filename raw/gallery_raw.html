@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>精品展厅 - 河北公益广告大赛</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c19",
+                        "primary-container": "#c8102e",
+                        "outline": "#906f6e",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeeee9",
+                        "surface-container-highest": "#e3e3de",
+                        "inverse-on-surface": "#f1f1ec",
+                        "on-primary-fixed": "#410007",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffdda8",
+                        "inverse-primary": "#ffb3b1",
+                        "primary-fixed": "#ffdad8",
+                        "outline-variant": "#e5bdbb",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e3",
+                        "on-secondary-fixed": "#001b3c",
+                        "error-container": "#ffdad6",
+                        "surface": "#fafaf5",
+                        "surface-tint": "#bf0229",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-bright": "#fafaf5",
+                        "on-error-container": "#93000a",
+                        "secondary": "#3a5f94",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#92001c",
+                        "tertiary": "#664603",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-secondary-container": "#294f83",
+                        "secondary-container": "#9fc2fe",
+                        "tertiary-fixed": "#ffdeab",
+                        "primary": "#9e001f",
+                        "on-surface": "#1a1c19",
+                        "tertiary-container": "#815e1c",
+                        "on-surface-variant": "#5c403f",
+                        "surface-variant": "#e3e3de",
+                        "on-secondary-fixed-variant": "#1f477b",
+                        "on-tertiary-fixed-variant": "#5f4100",
+                        "surface-container-low": "#f4f4ef",
+                        "secondary-fixed": "#d5e3ff",
+                        "inverse-surface": "#2f312e",
+                        "surface-dim": "#dadad5",
+                        "on-primary-container": "#ffdad8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#edbf74",
+                        "background": "#fafaf5",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Source Serif 4"],
+                        "headline-lg": ["Source Serif 4"],
+                        "display-lg": ["Source Serif 4"],
+                        "body-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "headline-lg-mobile": ["Source Serif 4"],
+                        "body-lg": ["Public Sans"],
+                        "label-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .watermark-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10L90 90M90 10L10 90' stroke='%239e001f' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .masonry-grid {
+            columns: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md watermark-bg selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-surface/95 dark:bg-surface-dim/95 border-b border-outline-variant/30 backdrop-blur-md shadow-sm sticky top-0 z-50 w-full">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">河北公益广告大赛</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors" href="#">首页</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors" href="#">大赛指南</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors" href="#">新闻动态</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors" href="#">作品征集</a>
+<a class="font-label-lg text-label-lg text-primary dark:text-primary-fixed-dim border-b-2 border-primary pb-1" href="#">精品展厅</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface hover:text-primary transition-colors" href="#">关于我们</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-4 py-1.5 border border-outline/10">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm w-40 placeholder:text-on-surface-variant/50" placeholder="搜索优秀作品..." type="text"/>
+</div>
+<button class="font-label-lg text-label-lg text-primary border border-primary px-5 py-2 rounded-lg hover:bg-primary/5 transition-all">登录/注册</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Gallery Header -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="text-primary font-label-lg tracking-widest mb-2 block">GALLERY OF EXCELLENCE</span>
+<h1 class="font-display-lg text-display-lg mb-4">精品展厅</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">汇聚历届大赛获奖佳作，用创意传递文明，用影像记录河北公益事业的点滴进步与文化传承。</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">auto_awesome</span>
+                        年度推荐
+                    </button>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="bg-surface-container-low p-6 mb-12 border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Year Filter -->
+<div class="space-y-2">
+<label class="font-label-lg text-on-surface-variant block">参赛年份</label>
+<select class="w-full bg-surface border-outline-variant/30 text-on-surface focus:border-primary focus:ring-0 rounded">
+<option>全部年份</option>
+<option>2024年</option>
+<option>2023年</option>
+<option>2022年</option>
+</select>
+</div>
+<!-- Category Filter -->
+<div class="space-y-2">
+<label class="font-label-lg text-on-surface-variant block">作品类别</label>
+<select class="w-full bg-surface border-outline-variant/30 text-on-surface focus:border-primary focus:ring-0 rounded">
+<option>全部分类</option>
+<option>平面海报</option>
+<option>视频广告</option>
+<option>互动创意</option>
+<option>广播作品</option>
+</select>
+</div>
+<!-- Award Level -->
+<div class="space-y-2">
+<label class="font-label-lg text-on-surface-variant block">获奖等级</label>
+<select class="w-full bg-surface border-outline-variant/30 text-on-surface focus:border-primary focus:ring-0 rounded">
+<option>全部等级</option>
+<option>全场大奖</option>
+<option>金奖</option>
+<option>银奖</option>
+<option>铜奖</option>
+<option>优秀奖</option>
+</select>
+</div>
+<!-- Search Component -->
+<div class="space-y-2">
+<label class="font-label-lg text-on-surface-variant block">关键词搜索</label>
+<div class="relative">
+<input class="w-full bg-surface border-outline-variant/30 text-on-surface focus:border-primary focus:ring-0 rounded pl-10" placeholder="输入作品名称/作者" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Masonry Grid -->
+<div class="masonry-grid">
+<!-- Item 1: Poster -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated graphic design poster showcasing Hebei traditional paper-cutting art transformed into modern urban architecture symbols. The design uses a bold color palette of Justice Red and deep Trust Blue on a textured cream background. Professional high-end editorial lighting highlights the intricate details of the paper-cut edges. The overall mood is culturally rich yet strikingly contemporary, representing institutional creative excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzo6nAWE-8I4pmME8EY3YtrLuKefI1jQ9m2-bq6YGVnWDTG6_xym6gwWr5_Bkm_1mphgta1U_xX8CgbN2rg3uVLx55CWq2BsZQd9o7BxRshVLcSQligMwVRNrAwNAa0Qa1DlwWk6gNoAWsnza3-PCW881AphKv7ou2VCGVycGfHXfXYpK9Cz7ruKqwrHiq5uvClX_QV3670-uD0KWRHhw7mFPiSMTJeEtrgeug6Zt6U7ihojHpRdGRQQCVHCNOBt6UzSIC5ffLXFjg"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm">金奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">平面类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">燕赵古韵 · 文明传承</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：张鸣远 | 2024年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 1.2k</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 458</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Item 2: Video (Landscape) -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic video still showing the sunrise over the Great Wall in Hebei province, captured with soft golden hour lighting. The atmosphere is majestic and inspiring, with mist rolling through the valley. The visual style is premium documentary with high dynamic range and deep shadows. Accents of gold and deep earth tones dominate the frame, conveying a sense of provincial pride and historical weight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMoJN0OXd0TBeVofnUcFNDzzurv1xvZXK9qoQe_pK46kpHSEK-s6eSC0npvjlPRtFTdQKabDuWs64g1vgElbBneG6yT8-L0Tg0TNIIDsTJpKtRo-1vfU4nQFZ7DIWTuHX-CihHgDu_6hUWuSGNajRLKzBlTawCBQ2oWPjaAsmQBleLKGOKCDvPSrfUTtsRXcz2qWdxY8C78Y1QhXtsOVS2-3yYtK-z5LbNK08MmvBvnOh7vFEJItFQ9BkPcqsqGb6q713cilLb6w9j"/>
+<div class="absolute inset-0 bg-on-background/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary text-[64px] scale-90 group-hover:scale-100 transition-transform" data-weight="fill">play_circle</span>
+</div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-sm text-label-sm">银奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">视频类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">绿水青山间的河北影踪</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：博雅创意工作室 | 2024年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 3.5k</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 892</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Item 3: Tall Poster -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-[2/3]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist public service advertisement poster about water conservation. It features a single drop of water transforming into a traditional Chinese ink painting of a landscape. The style is clean and institutional, utilizing heavy white space and delicate brushwork. The color palette is monochrome with a single subtle hint of Cultural Gold for the seal. The mood is tranquil, respectful, and thought-provoking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfktwWBchn4c8gcxSNLgESDStOeOLkw1gVIumVH8IR5k9u8hw4w5ckTIKJ_4D8S4dq6LyXMPUHGr1GiFJzh_05Av8zivW5BMMHiglJgMjmpPxqFcponUSk9kHeuZpFCmjhbMA8YcQmEDM5XSasudk56Z3NcNtZ7AvcQ69dy-2vjL4224oBaUUAR_27dZXVXEN6ECGtyGFPRo1U20Et5Wst4elf5rvLWJEGB9btSLW-U0RBpyn8sdyijBoYIi-G9rwUbzFLsLT7Pxb"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 font-label-sm text-label-sm">全场大奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">平面类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">滴水映千川</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：李子墨 | 2023年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 5.1k</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 1.2k</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Item 4: Interactive -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vibrant digital collage representing a smart city project in Hebei. The composition includes UI elements, circuit board patterns integrated with traditional tile motifs, and diverse citizen silhouettes. The lighting is high-tech with neon blue and bright red highlights against a clean surface background. The style is energetic and futuristic, suggesting a harmonious blend of culture and technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAypkjqjbwb3C4-SDS1nDO-t1xIAN6SlajYhwONdYWfdLXsaKyCnRd5Okid0-tGVTxf5QHinjsQcM717QycIyeUIvlL51m0fKBJO-s3UDQ5I8J9ttGiG3IGQzMPrRYGI7DFnGNp-G8TyCe1HKdHhjp3lIpPMxl9Rx7geKUnVMO_yFOBsUBmBnPogEA2C7HLqdCEnARVvNNYvuTxGlBzeaUroA9qd35O4BS-YxsDSceHJ0Dvy34uyGKFDfitId9k4lfoW2U1S_9HziQ"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 font-label-sm text-label-sm">铜奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">互动类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">智慧雄安 · 触碰未来</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：创世数字传媒 | 2024年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 920</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 312</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Item 5: Small Poster -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A warm, emotional photographic poster depicting an elderly man teaching a young girl traditional Hebei calligraphy. The lighting is soft and directional, creating a gentle chiaroscuro effect. The room is filled with classic wooden furniture and rice paper. The color palette is earthy and warm, emphasizing Trust Blue and soft whites. The mood is nostalgic, educational, and deeply human." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtXwBPhttMM7nf70nYW1SEnE_dqmFGZOTH4n548-CKPX98de8sgWB7jrR8IQOPAQ5988wJqZE2tFAIrFKA3oAzK9ddlQnOr10nYy54Cm1OIO0GhaDp1ERJfL0nfN2ZU-2ctK0iWOlhGyd4OJZBAByW6E7XlmHUUot5MXiNEBhlv-2IEEfiKf0x7bx_jJU0OyCAFlX3_2fD1asTwYwW1Wj9BJ5coqYyVwXgTRwaudbLMHfJm9padB9FEo5tMrCcvP6Hql4QMvzGLl7c"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-sm text-label-sm">银奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">摄影类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">笔尖下的家国情怀</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：赵文韬 | 2024年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 2.1k</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 674</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Item 6: Video -->
+<div class="masonry-item group cursor-pointer">
+<article class="bg-surface border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An abstract motion graphics still showing fluid shapes in various shades of red and gold swirling together to form the character for 'Harmony'. The visual style is high-end motion design with glowing edges, bokeh effects, and deep cinematic depth of field. The lighting is dramatic and focused, highlighting the elegant curves of the typography against a dark, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYALv7F6FjMcaJags1X9H9jg0-_p4fMhCZ-zZOynCNTk1ww4q9ojTh80EEOKJYtemDEJu7AsCN0oG_7xVlXCM7qTffuCbMngAz2iUNY12iSlp1SbgsntKa8S4xoH82mkbuavY3gsPgasS76qlegrIuq71umuotDEBUfrU9XDVDdUh1n88LRjnY9t3TP4U1ahTRhqDUM1epe5ZrtNoOyfY0iAPhGU5d82dV4r_lRgtceuWTBB2MMZBrDJnX3t2Gqe2Twe_Ihk2y5MwL"/>
+<div class="absolute inset-0 bg-on-background/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary text-[64px] scale-90 group-hover:scale-100 transition-transform" data-weight="fill">play_circle</span>
+</div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 font-label-sm text-label-sm">金奖</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 font-label-sm text-label-sm">视频类</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">和合共生 · 锦绣河北</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-4">作者：视觉动力团队 | 2024年度参赛作品</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> 4.8k</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">favorite</span> 1.5k</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors rounded">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded font-label-lg">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors rounded font-label-lg">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors rounded font-label-lg">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors rounded font-label-lg">12</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors rounded">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-on-background dark:bg-surface-container-lowest border-t border-outline/20 w-full mt-auto">
+<div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<span class="font-headline-md text-headline-md text-surface dark:text-on-surface">河北公益广告大赛</span>
+<p class="font-body-md text-body-md text-surface-variant/70 dark:text-on-surface-variant max-w-md">© 2024 河北省公益广告大赛组织委员会 版权所有 | 冀ICP备XXXXXXXX号</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-surface-variant/70 dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary underline transition-all" href="#">隐私政策</a>
+<a class="font-body-md text-body-md text-surface-variant/70 dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary underline transition-all" href="#">参赛条款</a>
+<a class="font-body-md text-body-md text-surface-variant/70 dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary underline transition-all" href="#">联系我们</a>
+<a class="font-body-md text-body-md text-surface-variant/70 dark:text-on-surface-variant hover:text-primary-fixed-dim dark:hover:text-primary underline transition-all" href="#">技术支持</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction script -->
+<script>
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const img = item.querySelector('img');
+                img.style.transition = 'transform 0.8s cubic-bezier(0.33, 1, 0.68, 1)';
+            });
+        });
+
+        // Simple filter logic simulation
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            select.addEventListener('change', () => {
+                // Simulate loading state
+                const grid = document.querySelector('.masonry-grid');
+                grid.style.opacity = '0.5';
+                grid.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    grid.style.opacity = '1';
+                }, 400);
+            });
+        });
+    </script>
+</body></html>
